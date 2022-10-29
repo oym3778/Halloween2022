@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     Vector3 direction = Vector3.zero;
     Vector3 velocity = Vector3.zero;
 
+    public GameObject player;
+
     [SerializeField] float speed = 1f;
 
     public Vector3 mousePos;
@@ -38,6 +40,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey (KeyCode.W))
         {
             direction.y += 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Vector3 randompos = new Vector3();
+            randompos = this.transform.position;
+            randompos.x += Random.Range(-2, 2);
+            Instantiate(player, this.transform.position, Quaternion.identity);
         }
 
 
