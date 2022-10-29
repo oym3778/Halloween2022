@@ -39,20 +39,16 @@ public class BulletSpawner : MonoBehaviour
         {
             Bullet cloneBullet = Instantiate(bullet);
             cloneBullet.bulletPos = transform.position;
-            cloneBullet.shootAtMouse = true;
-            cloneBullet.shootAnotherObject = false;
             m_Bullets.Add(cloneBullet);
-            cloneBullet.mousePosOnClick = mousePosOnClick;
+            cloneBullet.target = mousePosOnClick;
 
         }
         else if (shootAnotherObject)
         {
             Bullet cloneBullet = Instantiate(bullet);
             cloneBullet.bulletPos = transform.position;
-            cloneBullet.shootAtMouse = false;
-            cloneBullet.shootAnotherObject = true;
 
-            cloneBullet.objectToShootB = objectToShoot.transform.position;
+            cloneBullet.target = objectToShoot.transform.position;
             cloneBullet.directionToFire = objectToShoot.transform.position - cloneBullet.bulletPos;
 
             cloneBullet.speed = 1f;

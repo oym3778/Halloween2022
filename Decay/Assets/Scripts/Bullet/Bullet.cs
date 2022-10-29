@@ -15,19 +15,15 @@ public class Bullet : MonoBehaviour
 
     public float speed = 15f;
 
-    public Vector3 mousePosOnClick;
-
-    public bool shootAnotherObject = false;
-    public bool shootAtMouse = false;
+    public Vector3 target;
+    private Vector3 diff;
 
     public bool isActive = true;
-
-    public Vector3 objectToShootB;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        diff = this.transform.position - target;
     }
 
     // Update is called once per frame
@@ -37,28 +33,11 @@ public class Bullet : MonoBehaviour
         // direction will be changed based on if fireing at the mouse or at another object,
         // that is handled in the Bullet Spawner
 
-        bullVelocity = directionToFire * speed * Time.deltaTime;
+        bullVelocity = Vector3.one * diff.magnitude * speed * Time.deltaTime;
         bulletPos += bullVelocity;
         transform.position = bulletPos;
 
     }
-    //private void ShootToMouse(Vector3 mousePosition)
-    //{
-    //    directionToFire = mousePosOnClick.normalized;
-    //}
-    //public void ShootToObject(Vector3 target)
-    //{
-
-    //    //float angle = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x);
-    //    float angle = Mathf.Atan2(target.y, target.x) - Mathf.Atan2(transform.position.y, transform.position.x);
-
-    //}
-
-
-    //private Vector3 GetMouseClickPos()
-    //{
-    //    return transform.position;
-    //}
 
 
 

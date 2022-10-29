@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        direction = Vector3.zero;
         if (Input.GetKey(KeyCode.A))
         {
             direction.x -= 1;
