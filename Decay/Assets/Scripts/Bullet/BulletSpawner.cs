@@ -16,6 +16,7 @@ public class BulletSpawner : MonoBehaviour
     public Vector3 mousePosOnClick;
 
     public GameObject objectToShoot;
+    public float bulletSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class BulletSpawner : MonoBehaviour
             Bullet cloneBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             m_Bullets.Add(cloneBullet);
             cloneBullet.target = mousePosOnClick;
+            cloneBullet.speed = bulletSpeed;
 
         }
         else if (shootAnotherObject)

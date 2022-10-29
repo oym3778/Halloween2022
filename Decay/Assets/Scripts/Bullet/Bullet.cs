@@ -23,7 +23,8 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(this.transform.position);
+        bulletPos = transform.position;
+        Debug.Log("StartPos: " + this.transform.position);
         Debug.Log(target);
         diff = target - this.transform.position;
     }
@@ -31,10 +32,12 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("CurrentPos: " + this.transform.position);
         // Everything should still run movement, however
         // direction will be changed based on if fireing at the mouse or at another object,
         // that is handled in the Bullet Spawner
         bullVelocity = diff / diff.magnitude * speed * Time.deltaTime;
+        bullVelocity.z = 0;
         bulletPos += bullVelocity;
         transform.position = bulletPos;
 

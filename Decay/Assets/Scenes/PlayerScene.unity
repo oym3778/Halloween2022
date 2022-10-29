@@ -286,8 +286,8 @@ MonoBehaviour:
   shootAnotherObject: 0
   shootAtMouse: 1
   mousePosOnClick: {x: 0, y: 0, z: 0}
-  transform: {fileID: 398219512}
   objectToShoot: {fileID: 1880412756}
+  bulletSpeed: 4
 --- !u!1001 &1292884549
 PrefabInstance:
   m_ObjectHideFlags: 0
