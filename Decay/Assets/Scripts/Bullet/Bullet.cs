@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
 
     public Vector3 target;
     private Vector3 diff;
+    private float distance;
 
     public bool isActive = true;
 
@@ -24,9 +25,9 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         bulletPos = transform.position;
-        Debug.Log("StartPos: " + this.transform.position);
-        Debug.Log(target);
         diff = target - this.transform.position;
+        target.z = 0;
+        distance = (target - this.transform.position).magnitude;
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
         // Everything should still run movement, however
         // direction will be changed based on if fireing at the mouse or at another object,
         // that is handled in the Bullet Spawner
-        bullVelocity = diff / diff.magnitude * speed * Time.deltaTime;
+        bullVelocity =  diff / distance * speed * Time.deltaTime;
         bullVelocity.z = 0;
         bulletPos += bullVelocity;
         transform.position = bulletPos;
