@@ -20,20 +20,17 @@ public class BulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (Mouse.current.position.ReadValue() != null)
-        //{
-        //    Debug.Log("This is null");
-        //}
-        //mousePosOnClick = Mouse.current.position.ReadValue();
-        //mousePosOnClick = Camera.main.ScreenToWorldPoint(mousePosOnClick);
-        //mousePosOnClick.z = 0;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //mousePosOnClick = Mouse.current.position.ReadValue();
+        if (Input.GetMouseButtonDown(0))
+        {
+            mousePosOnClick = Input.mousePosition;
+            OnFire();
+        }
     }
 
     public void OnFire()

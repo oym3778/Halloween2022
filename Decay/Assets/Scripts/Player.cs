@@ -22,26 +22,27 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //mousePos = Mouse.current.position.ReadValue();
-        //mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction.x -= 1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction.x += 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            direction.y -= 1;
+        }
+        if (Input.GetKey (KeyCode.W))
+        {
+            direction.y += 1;
+        }
+
+
 
         velocity = direction * speed * Time.deltaTime;
         position += velocity;
         transform.position = position;
-    }
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        direction = context.ReadValue<Vector2>();
-        if (direction != Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
-        }
-        //}
-        //if (direction == Vector3.down)
-        //{
-        //    transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
-        //}
-
     }
 }

@@ -195,7 +195,6 @@ GameObject:
   - component: {fileID: 398219512}
   - component: {fileID: 398219513}
   - component: {fileID: 398219514}
-  - component: {fileID: 398219515}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -288,60 +287,6 @@ MonoBehaviour:
   shootAtMouse: 1
   mousePosOnClick: {x: 0, y: 0, z: 0}
   objectToShoot: {fileID: 1880412756}
---- !u!114 &398219515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398219511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 1f6136c2f01ae444ca05b16851567ab1, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 022b1893-96bd-4eaf-b9ae-f44188d7acad
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7ef0154c-6e4d-48ec-b07c-09146f7bd918
-    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 398219514}
-        m_TargetAssemblyTypeName: BulletSpawner, Assembly-CSharp
-        m_MethodName: OnFire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 0355a979-0852-4a8b-92a0-4b4ba7e7bc3f
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1001 &1292884549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,67 +365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4418062d8d03ae649b30323281806b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 1
   mousePos: {x: 0, y: 0, z: 0}
 --- !u!4 &1292884554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6218294534213181442, guid: de6cd6e52f9badf4bb80154308495cc6, type: 3}
   m_PrefabInstance: {fileID: 1292884549}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1292884556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292884550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 1f6136c2f01ae444ca05b16851567ab1, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1292884551}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 022b1893-96bd-4eaf-b9ae-f44188d7acad
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7ef0154c-6e4d-48ec-b07c-09146f7bd918
-    m_ActionName: Player/Look
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0355a979-0852-4a8b-92a0-4b4ba7e7bc3f
-    m_ActionName: Player/Fire
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1880412756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1413655305253337545, guid: ea19e3883cd98814ea0efd0322af084b, type: 3}

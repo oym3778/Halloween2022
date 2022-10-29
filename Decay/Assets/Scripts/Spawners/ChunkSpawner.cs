@@ -19,15 +19,24 @@ public class ChunkSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool roundOver = true;
         if(chunks.Length > 0)
         {
+            
             for(int i=0; i<chunks.Length; i++)
             {
-                bool roundOver = true;
                 if (chunks[i].activeSelf)
                 {
                     roundOver = false;
                 }
+            }
+        }
+
+        if (roundOver)
+        {
+            for(int i=0; i < chunks.Length; i++)
+            {
+                Destroy(chunks[i]);
             }
         }
     }
