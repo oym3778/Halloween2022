@@ -27,6 +27,7 @@ public class BulletSpawner : MonoBehaviour
         //mousePosOnClick = Mouse.current.position.ReadValue();
         //mousePosOnClick = Camera.main.ScreenToWorldPoint(mousePosOnClick);
         //mousePosOnClick.z = 0;
+
     }
 
     // Update is called once per frame
