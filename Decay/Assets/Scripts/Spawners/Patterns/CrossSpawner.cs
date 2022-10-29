@@ -5,8 +5,10 @@ using UnityEngine;
 public class CrossSpawner : MonoBehaviour
 {
 
-    public static void spawn(GameObject thing, int ammount, int width, int height, Vector3 origin)
+    public static GameObject[] spawn(GameObject thing, int ammount, int width, int height, Vector3 origin)
     {
+        GameObject[] spawns = new GameObject[ammount];
+        int added = 0;
         for (int x = -1; x < 2; x += 2)
         {
             for (float i = 0; i < ammount; i++)
@@ -14,7 +16,8 @@ public class CrossSpawner : MonoBehaviour
                 Vector3 position = origin;
                 position.x = x * i / ammount * width;
                 position.y = 0;
-                Instantiate(thing, position, Quaternion.identity);
+                spawns[added] = Instantiate(thing, position, Quaternion.identity);
+                added++;
             }
 
         }
@@ -26,8 +29,10 @@ public class CrossSpawner : MonoBehaviour
                 Vector3 position = origin;
                 position.x = 0;
                 position.y = y * i / ammount * height;
-                Instantiate(thing, position, Quaternion.identity);
+                spawns[added] = Instantiate(thing, position, Quaternion.identity);
+                added++;
             }
         }
+        return spawns;
     }
 }
