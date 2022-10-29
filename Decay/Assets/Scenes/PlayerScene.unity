@@ -286,6 +286,7 @@ MonoBehaviour:
   shootAnotherObject: 0
   shootAtMouse: 1
   mousePosOnClick: {x: 0, y: 0, z: 0}
+  transform: {fileID: 398219512}
   objectToShoot: {fileID: 1880412756}
 --- !u!1001 &1292884549
 PrefabInstance:
@@ -365,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4418062d8d03ae649b30323281806b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   mousePos: {x: 0, y: 0, z: 0}
 --- !u!4 &1292884554 stripped
 Transform:

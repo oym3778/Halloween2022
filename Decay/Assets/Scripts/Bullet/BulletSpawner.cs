@@ -11,8 +11,8 @@ public class BulletSpawner : MonoBehaviour
     public Bullet bullet;
 
     public bool shootAnotherObject;
-
     public bool shootAtMouse;
+
     public Vector3 mousePosOnClick;
 
     public GameObject objectToShoot;
@@ -20,7 +20,7 @@ public class BulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            mousePosOnClick = Input.mousePosition;
+            mousePosOnClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             OnFire();
         }
     }
@@ -37,16 +37,14 @@ public class BulletSpawner : MonoBehaviour
     {
         if (shootAtMouse)
         {
-            Bullet cloneBullet = Instantiate(bullet);
-            cloneBullet.bulletPos = transform.position;
+            Bullet cloneBullet = Instantiate(bullet, this.transform.position, Quaternion.identity);
             m_Bullets.Add(cloneBullet);
             cloneBullet.target = mousePosOnClick;
 
         }
         else if (shootAnotherObject)
         {
-            Bullet cloneBullet = Instantiate(bullet);
-            cloneBullet.bulletPos = transform.position;
+            Bullet cloneBullet = Instantiate(bullet, this.transform.position, Quaternion.identity);
 
             cloneBullet.target = objectToShoot.transform.position;
             cloneBullet.directionToFire = objectToShoot.transform.position - cloneBullet.bulletPos;
