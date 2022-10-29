@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 
 public class Bullet : MonoBehaviour
 {
-    public Vector3 bulletPos = Vector3.zero;
+    public Vector3 bulletPos;
     Vector3 bullVelocity = Vector3.zero;
     public Vector3 directionToFire = Vector3.right;
 

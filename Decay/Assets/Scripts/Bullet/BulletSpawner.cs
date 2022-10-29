@@ -37,7 +37,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if (shootAtMouse)
         {
-            Bullet cloneBullet = Instantiate(bullet, this.transform.position, Quaternion.identity);
+            Bullet cloneBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             m_Bullets.Add(cloneBullet);
             cloneBullet.target = mousePosOnClick;
 
