@@ -11,21 +11,22 @@ public class Bullet : MonoBehaviour
 {
     public Vector3 bulletPos = Vector3.zero;
     Vector3 bullVelocity = Vector3.zero;
-    Vector3 direction = Vector3.zero;
+    public Vector3 directionToFire = Vector3.right;
 
-    public float speed = 1f;
+    public float speed = 15f;
 
-    public Vector3 mouseCurrentPos;
     public Vector3 mousePosOnClick;
 
-    public bool shootAnotherObject;
-    public bool shootAtMouse;
+    public bool shootAnotherObject = false;
+    public bool shootAtMouse = false;
+
     public bool isActive = true;
+
+    public Vector3 objectToShootB;
 
     // Start is called before the first frame update
     void Start()
     {
-
 
     }
 
@@ -33,42 +34,31 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         // Everything should still run movement, however
-        // direction will be changed based on the respective if statements
-        //if (shootAnotherObject)
-        //{
-        //    ShootToObject();
-        //    direction = ;
-        //}
-        //else if (shootAtMouse)
-        //{
-        ShootToMouse();
-        direction = mouseCurrentPos;
-        //}
+        // direction will be changed based on if fireing at the mouse or at another object,
+        // that is handled in the Bullet Spawner
 
-
-        bullVelocity = direction * speed * Time.deltaTime;
+        bullVelocity = directionToFire * speed * Time.deltaTime;
         bulletPos += bullVelocity;
         transform.position = bulletPos;
 
     }
-    private void ShootToMouse()
-    {
-        mouseCurrentPos = Mouse.current.position.ReadValue();
-        mouseCurrentPos = Camera.main.ScreenToWorldPoint(mouseCurrentPos);
-        mouseCurrentPos.z = 0;
+    //private void ShootToMouse(Vector3 mousePosition)
+    //{
+    //    directionToFire = mousePosOnClick.normalized;
+    //}
+    //public void ShootToObject(Vector3 target)
+    //{
 
-        direction = mouseCurrentPos;
-    }
-    private void ShootToObject()
-    {
-        direction = Vector3.zero;
-    }
+    //    //float angle = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x);
+    //    float angle = Mathf.Atan2(target.y, target.x) - Mathf.Atan2(transform.position.y, transform.position.x);
+
+    //}
 
 
-    private Vector3 GetMouseClickPos()
-    {
-        return transform.position;
-    }
+    //private Vector3 GetMouseClickPos()
+    //{
+    //    return transform.position;
+    //}
 
 
 

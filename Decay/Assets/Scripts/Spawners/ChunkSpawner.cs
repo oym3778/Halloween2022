@@ -34,6 +34,6 @@ public class ChunkSpawner : MonoBehaviour
 
     public void StartLevel(int level)
     {
-        chunks = RingSpawner.spawn(chunk, 5 + level, 5, Vector3(0, 0, 0));
+        chunks = RingSpawner.spawn(chunk, 5 + level, 5, new Vector3(0, 0, 0));
     }
 }

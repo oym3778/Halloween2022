@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePos = Mouse.current.position.ReadValue();
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        //mousePos = Mouse.current.position.ReadValue();
+        //mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         velocity = direction * speed * Time.deltaTime;
         position += velocity;
@@ -44,9 +44,4 @@ public class Player : MonoBehaviour
         //}
 
     }
-    //public void OnFire()
-    //{
-    //    Bullet cloneBullet = new Bullet();
-    //    Instantiate(cloneBullet, transform);
-    //}
 }
