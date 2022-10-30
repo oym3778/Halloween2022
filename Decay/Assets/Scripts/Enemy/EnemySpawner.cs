@@ -6,11 +6,16 @@ public class EnemySpawner : MonoBehaviour
 {
     public float nextSpawn = 0f;
     public float spawnRate = .5f;
-    List<Enemy> spawns = new List<Enemy>();
+    public List<Enemy> spawns = new List<Enemy>();
     public Enemy enemy;
     public Player player;
     public float tempX;
     public float tempY;
+
+    public BulletSpawner bulletSpawner;
+
+    List<Enemy> enemiesToRemove = new List<Enemy>();
+    List<Bullet> bulletsToRemove = new List<Bullet>();
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +43,78 @@ public class EnemySpawner : MonoBehaviour
             // jsut spawn them a certain distance away from player
             cloneEnemy.m_PhysicsObject.position = new Vector3(tempX, tempY, -0.1292487f);
             spawns.Add(cloneEnemy);
+        }
+
+        for (int i = 0; i < spawns.Count; i++)
+        {
+            for (int z = 0; z < bulletSpawner.m_Bullets.Count; z++)
+            {
+                if (CircleCollision(bulletSpawner.m_Bullets[z], spawns[i]))
+                {
+                    Debug.Log("Collision happened");
+                    spawns[i].isActive = false;
+                    bulletSpawner.m_Bullets[z].isActive = false;
+
+                    enemiesToRemove.Add(spawns[i]);
+                    bulletsToRemove.Add(bulletSpawner.m_Bullets[z]);
+                }
+            }
+        }
+
+        for (int i = 0; i < enemiesToRemove.Count; i++)
+        {
+            if (spawns.Contains(enemiesToRemove[i]))
+            {
+                spawns.Remove(enemiesToRemove[i]);
+                Destroy(enemiesToRemove[i].gameObject);
+            }
+        }
+        for (int i = 0; i < bulletsToRemove.Count; i++)
+        {
+            if (bulletSpawner.m_Bullets.Contains(bulletsToRemove[i]))
+            {
+                bulletSpawner.m_Bullets.Remove(bulletsToRemove[i]);
+                Destroy(bulletsToRemove[i].gameObject);
+            }
+        }
+
+        //for (int i = 0; i < spawns.Count; i++)
+        //{
+        //    if (!spawns[i].isActive)
+        //    {
+        //        //spawns.Remove(spawns[i]);
+        //        Destroy(spawns[i].gameObject);
+        //        //i--;
+        //    }
+
+        //}
+        //for (int i = 0; i < bulletSpawner.m_Bullets.Count; i++)
+        //{
+        //    if (!bulletSpawner.m_Bullets[i].isActive)
+        //    {
+        //        //bulletSpawner.m_Bullets.Remove(bulletSpawner.m_Bullets[i]);
+        //        Destroy(bulletSpawner.m_Bullets[i].gameObject);
+        //        //i--;
+
+        //    }
+        //}
+
+    }
+
+    private bool CircleCollision(Bullet obj1, Enemy obj2)
+    {
+        // if the distance between centers of each object is less
+        // than the summed raduis of both objects, there is a collision
+        float distance = Mathf.Sqrt(Mathf.Pow(obj1.bulletPos.x - obj2.m_PhysicsObject.position.x, 2)
+            + Mathf.Pow(obj1.bulletPos.y - obj2.m_PhysicsObject.position.y, 2));
+        if (distance < obj1.radius + obj2.radius)
+        {
+            return true;
+        }
+        // Else no collision
+        else
+        {
+            return false;
         }
     }
 }

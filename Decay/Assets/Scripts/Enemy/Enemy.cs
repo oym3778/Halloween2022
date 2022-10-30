@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     private BulletSpawner bulletSpawner;
     private Bullet bullet;
     private GameObject objectToShoot;
+    public float radius = .70f;
+    public bool isActive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
         bulletSpawner = GetComponent<BulletSpawner>();
         bullet = bulletSpawner.bullet;
         objectToShoot = bulletSpawner.objectToShoot;
+        radius = .70f;
     }
 
     // Update is called once per frame
@@ -43,5 +46,11 @@ public class Enemy : MonoBehaviour
         //    cloneBullet.speed = 1f;
         //    bulletSpawner.m_Bullets.Add(cloneBullet);
         //}
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

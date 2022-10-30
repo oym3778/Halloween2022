@@ -21,6 +21,8 @@ public class Bullet : MonoBehaviour
 
     public bool isActive = true;
 
+    public float radius = .15f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Bullet : MonoBehaviour
         diff = target - this.transform.position;
         target.z = 0;
         distance = (target - this.transform.position).magnitude;
+        radius = .15f;
     }
 
     // Update is called once per frame
@@ -42,6 +45,11 @@ public class Bullet : MonoBehaviour
         bulletPos += bullVelocity;
         transform.position = bulletPos;
 
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
 
