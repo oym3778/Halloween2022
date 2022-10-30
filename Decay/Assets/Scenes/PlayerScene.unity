@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4418062d8d03ae649b30323281806b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8564793378425007862, guid: de6cd6e52f9badf4bb80154308495cc6, type: 3}
   speed: 5
   mousePos: {x: 0, y: 0, z: 0}
 --- !u!4 &1292884554 stripped
@@ -373,6 +374,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6218294534213181442, guid: de6cd6e52f9badf4bb80154308495cc6, type: 3}
   m_PrefabInstance: {fileID: 1292884549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1558805564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7577920980148316453, guid: 46d0a03c617226e4eac471db106667c4, type: 3}
+  m_PrefabInstance: {fileID: 7577920979705123161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1558805568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558805564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bcc87c163b7ea4bba47c43f7b6cce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1292884554}
 --- !u!1 &1880412756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1413655305253337545, guid: ea19e3883cd98814ea0efd0322af084b, type: 3}
