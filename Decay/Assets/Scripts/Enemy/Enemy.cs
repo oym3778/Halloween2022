@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PhysicsObject))]
 public class Enemy : MonoBehaviour
-{
-    Vector3 enemyPos = Vector3.zero;
-    Vector3 enemyVelocity = Vector3.zero;
-    Vector3 enemyDirection = Vector3.zero;
-
-    public float enemySpeed = 5f;
-
+{    
+    public PhysicsObject m_PhysicsObject;
     private float nextFire = 0.0f;
     public float fireRate = 0.5f;
 
@@ -20,7 +16,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyPos = transform.position;
+        m_PhysicsObject = GetComponent<PhysicsObject>();
+        //enemyPos = transform.position;
         bulletSpawner = GetComponent<BulletSpawner>();
         bullet = bulletSpawner.bullet;
         objectToShoot = bulletSpawner.objectToShoot;
@@ -29,9 +26,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyVelocity = enemyDirection * enemySpeed * Time.deltaTime;
-        enemyPos += enemyVelocity;
-        transform.position = enemyPos;
+        //enemyVelocity = enemyDirection * enemySpeed * Time.deltaTime;
+        //enemyPos += enemyVelocity;
+        //transform.position = enemyPos;
 
         //if (Time.time > nextFire)
         //{

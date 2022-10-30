@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("CurrentPos: " + this.transform.position);
+        
         // Everything should still run movement, however
         // direction will be changed based on if fireing at the mouse or at another object,
         // that is handled in the Bullet Spawner

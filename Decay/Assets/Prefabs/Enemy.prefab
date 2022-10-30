@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4188169757516373583}
   - component: {fileID: 5698931587405906951}
   - component: {fileID: 483159095583111305}
+  - component: {fileID: -7346680363234232163}
+  - component: {fileID: -5638830225076502850}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -98,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1958906eff6ffce44a4b1899f520316e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 5
+  m_PhysicsObject: {fileID: 0}
+  fireRate: 0.5
 --- !u!114 &483159095583111305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +115,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Bullets: []
-  bullet: {fileID: 0}
-  shootAnotherObject: 1
+  bullet: {fileID: 8128154473580502507, guid: 6a2d2016b7f83034890c2bb7d6f0eab8, type: 3}
+  shootAnotherObject: 0
   shootAtMouse: 0
   mousePosOnClick: {x: 0, y: 0, z: 0}
   objectToShoot: {fileID: 0}
+  bulletSpeed: 1
+--- !u!114 &-7346680363234232163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413655305253337545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b717dd9e4eb2854f9e0a984d6af44c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 1
+  width: 0
+  height: 0
+--- !u!114 &-5638830225076502850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413655305253337545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ac967dd8aabe24a8a19192883035ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  physObj: {fileID: 0}
+  maxSpeed: 2
+  maxForce: 2
+  target: {fileID: 0}
