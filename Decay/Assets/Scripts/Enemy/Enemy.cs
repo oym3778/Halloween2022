@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private GameObject objectToShoot;
     public float radius = .70f;
     public bool isActive = true;
+    public int points = 10;
 
     // Start is called before the first frame update
     void Start()

@@ -28,10 +28,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             direction.x -= 1;
+            transform.rotation = Quaternion.LookRotation(Vector3.back);
         }
         if (Input.GetKey(KeyCode.D))
         {
             direction.x += 1;
+            transform.rotation = Quaternion.LookRotation(Vector3.forward);
         }
         if (Input.GetKey(KeyCode.S))
         {

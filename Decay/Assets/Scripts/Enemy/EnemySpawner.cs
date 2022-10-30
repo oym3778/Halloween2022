@@ -12,6 +12,9 @@ public class EnemySpawner : MonoBehaviour
     public float tempX;
     public float tempY;
 
+    public int totalPoints;
+    public GameObject pointsWritten;
+
     public BulletSpawner bulletSpawner;
 
     List<Enemy> enemiesToRemove = new List<Enemy>();
@@ -51,16 +54,19 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (CircleCollision(bulletSpawner.m_Bullets[z], spawns[i]))
                 {
-                    Debug.Log("Collision happened");
+                    totalPoints += spawns[i].points;
                     spawns[i].isActive = false;
                     bulletSpawner.m_Bullets[z].isActive = false;
 
                     enemiesToRemove.Add(spawns[i]);
                     bulletsToRemove.Add(bulletSpawner.m_Bullets[z]);
+                    pointsWritten.GetComponent<TextMesh>().text = $"Score: {totalPoints}";
+                    
                 }
             }
         }
 
+        // Handles Deletion of enemies who have collided and are no longer active
         for (int i = 0; i < enemiesToRemove.Count; i++)
         {
             if (spawns.Contains(enemiesToRemove[i]))
@@ -69,6 +75,7 @@ public class EnemySpawner : MonoBehaviour
                 Destroy(enemiesToRemove[i].gameObject);
             }
         }
+        // Handles Deletion of Bullets who have collided and are no longer active
         for (int i = 0; i < bulletsToRemove.Count; i++)
         {
             if (bulletSpawner.m_Bullets.Contains(bulletsToRemove[i]))
@@ -77,27 +84,6 @@ public class EnemySpawner : MonoBehaviour
                 Destroy(bulletsToRemove[i].gameObject);
             }
         }
-
-        //for (int i = 0; i < spawns.Count; i++)
-        //{
-        //    if (!spawns[i].isActive)
-        //    {
-        //        //spawns.Remove(spawns[i]);
-        //        Destroy(spawns[i].gameObject);
-        //        //i--;
-        //    }
-
-        //}
-        //for (int i = 0; i < bulletSpawner.m_Bullets.Count; i++)
-        //{
-        //    if (!bulletSpawner.m_Bullets[i].isActive)
-        //    {
-        //        //bulletSpawner.m_Bullets.Remove(bulletSpawner.m_Bullets[i]);
-        //        Destroy(bulletSpawner.m_Bullets[i].gameObject);
-        //        //i--;
-
-        //    }
-        //}
 
     }
 
