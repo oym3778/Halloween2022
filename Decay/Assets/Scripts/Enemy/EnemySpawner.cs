@@ -20,15 +20,15 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
 
-        if (Time.time > nextSpawn)
-        {
-            nextSpawn = Time.time + spawnRate;
+        //if (Time.time > nextSpawn)
+        //{
+        //    nextSpawn = Time.time + spawnRate;
 
-            Enemy cloneEnemy = Instantiate(enemy, transform);
-            float tempX = Random.Range(cloneEnemy.m_PhysicsObject.width * -1, cloneEnemy.m_PhysicsObject.width);
-            float tempY = Random.Range(cloneEnemy.m_PhysicsObject.height * -1, cloneEnemy.m_PhysicsObject.height);
-            cloneEnemy.m_PhysicsObject.Position = new Vector3(tempX, tempY, -0.1292487f);
-            spawns.Add(cloneEnemy);
-        }
+        //    Enemy cloneEnemy = Instantiate(enemy, transform);
+        //    float tempX = Random.Range(cloneEnemy.m_PhysicsObject.width * -1, cloneEnemy.m_PhysicsObject.width);
+        //    float tempY = Random.Range(cloneEnemy.m_PhysicsObject.height * -1, cloneEnemy.m_PhysicsObject.height);
+        //    cloneEnemy.m_PhysicsObject.Position = new Vector3(tempX, tempY, -0.1292487f);
+        //    spawns.Add(cloneEnemy);
+        //}
     }
 }
