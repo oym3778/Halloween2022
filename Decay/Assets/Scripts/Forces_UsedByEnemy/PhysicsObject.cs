@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhysicsObject : MonoBehaviour
 {
-    Vector3 position = Vector3.zero;
+    public Vector3 position = Vector3.zero;
     Vector3 acceleration = Vector3.zero;
     Vector3 velocity = Vector3.zero;
     
@@ -37,13 +37,13 @@ public class PhysicsObject : MonoBehaviour
     {
         height = Camera.main.orthographicSize;
         width = height * Camera.main.aspect;
-        position = transform.position;
+        //position = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Bounce();
+        //Bounce();
 
         // Play with these values a bit, why is it += instead of = as
         // it usually was for vector based movement

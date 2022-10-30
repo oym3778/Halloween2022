@@ -6,7 +6,7 @@ public class Steering_Seek : Agent
 {
     Vector3 seekerForce = Vector3.zero;
 
-    [SerializeField] GameObject target;
+    public GameObject target;
 
     protected override void CalcSteeringForces()
     {

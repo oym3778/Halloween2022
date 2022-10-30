@@ -225,6 +225,8 @@ MonoBehaviour:
   spawnRate: 3
   enemy: {fileID: 5698931587405906951, guid: ea19e3883cd98814ea0efd0322af084b, type: 3}
   player: {fileID: 1292884551}
+  tempX: 0
+  tempY: 0
 --- !u!4 &391279377
 Transform:
   m_ObjectHideFlags: 0
@@ -343,7 +345,7 @@ MonoBehaviour:
   shootAnotherObject: 0
   shootAtMouse: 1
   mousePosOnClick: {x: 0, y: 0, z: 0}
-  objectToShoot: {fileID: 1880412756}
+  objectToShoot: {fileID: 0}
   bulletSpeed: 4
 --- !u!1001 &1292884549
 PrefabInstance:
@@ -423,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4418062d8d03ae649b30323281806b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
   player: {fileID: 8564793378425007862, guid: de6cd6e52f9badf4bb80154308495cc6, type: 3}
   speed: 5
   mousePos: {x: 0, y: 0, z: 0}
@@ -449,11 +452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1292884554}
---- !u!1 &1880412756 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1413655305253337545, guid: ea19e3883cd98814ea0efd0322af084b, type: 3}
-  m_PrefabInstance: {fileID: 204841417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1880412760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 998503204777892618, guid: ea19e3883cd98814ea0efd0322af084b, type: 3}
