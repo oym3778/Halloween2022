@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1958906eff6ffce44a4b1899f520316e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PhysicsObject: {fileID: 0}
+  m_PhysicsObject: {fileID: -7346680363234232163}
   fireRate: 0.5
 --- !u!114 &483159095583111305
 MonoBehaviour:
