@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSpawn: 0
-  spawnRate: 3
+  spawnRate: 0.5
   spawns: []
   enemy: {fileID: 5698931587405906951, guid: ea19e3883cd98814ea0efd0322af084b, type: 3}
   player: {fileID: 1292884551}
