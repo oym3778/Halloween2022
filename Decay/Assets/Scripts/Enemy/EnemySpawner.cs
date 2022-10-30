@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public float tempY;
 
     public int totalPoints;
-    public GameObject pointsWritten;
+    public Text pointsWritten;
 
     public BulletSpawner bulletSpawner;
 
@@ -60,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
 
                     enemiesToRemove.Add(spawns[i]);
                     bulletsToRemove.Add(bulletSpawner.m_Bullets[z]);
-                    pointsWritten.GetComponent<TextMesh>().text = $"Score: {totalPoints}";
+                    pointsWritten.text = $"Score: {totalPoints}";
                     
                 }
             }
