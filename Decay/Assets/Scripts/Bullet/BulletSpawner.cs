@@ -21,7 +21,7 @@ public class BulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,19 +39,15 @@ public class BulletSpawner : MonoBehaviour
         if (shootAtMouse)
         {
             Bullet cloneBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            m_Bullets.Add(cloneBullet);
             cloneBullet.target = mousePosOnClick;
             cloneBullet.speed = bulletSpeed;
-
+            m_Bullets.Add(cloneBullet);
         }
         else if (shootAnotherObject)
         {
-            Bullet cloneBullet = Instantiate(bullet, this.transform.position, Quaternion.identity);
-
+            Bullet cloneBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             cloneBullet.target = objectToShoot.transform.position;
-            cloneBullet.directionToFire = objectToShoot.transform.position - cloneBullet.bulletPos;
-
-            cloneBullet.speed = 1f;
+            cloneBullet.speed = bulletSpeed;
             m_Bullets.Add(cloneBullet);
         }
 
